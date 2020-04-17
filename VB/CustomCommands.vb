@@ -57,14 +57,14 @@ Namespace RichEditCustomCopyPaste
 		End Sub
 
 		Protected Overrides Function CreateInsertObjectCommand() As RichEditCommand
-			Return New CustomPasteSelectionCoreCommand(MyBase.Control, New DevExpress.XtraRichEdit.Commands.Internal.ClipboardPasteSource())
+			Return New CustomPasteSelectionCoreCommand(MyBase.Control, New ClipboardPasteSource())
 		End Function
 	End Class
 
 	Public Class CustomPasteSelectionCoreCommand
 		Inherits PasteSelectionCoreCommand
 
-		Public Sub New(ByVal control As IRichEditControl, ByVal pasteSource As DevExpress.XtraRichEdit.Commands.Internal.PasteSource)
+		Public Sub New(ByVal control As IRichEditControl, ByVal pasteSource As PasteSource)
 			MyBase.New(control, pasteSource)
 
 		End Sub

@@ -54,12 +54,12 @@ namespace RichEditCustomCopyPaste {
         }
 
         protected override RichEditCommand CreateInsertObjectCommand() {
-            return new CustomPasteSelectionCoreCommand(base.Control, new DevExpress.XtraRichEdit.Commands.Internal.ClipboardPasteSource());
+            return new CustomPasteSelectionCoreCommand(base.Control, new ClipboardPasteSource());
         }
     }
 
     public class CustomPasteSelectionCoreCommand : PasteSelectionCoreCommand {
-        public CustomPasteSelectionCoreCommand(IRichEditControl control, DevExpress.XtraRichEdit.Commands.Internal.PasteSource pasteSource)
+        public CustomPasteSelectionCoreCommand(IRichEditControl control, PasteSource pasteSource)
             : base(control, pasteSource) {
 
         }
