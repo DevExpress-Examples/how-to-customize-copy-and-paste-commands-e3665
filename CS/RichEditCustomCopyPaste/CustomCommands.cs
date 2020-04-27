@@ -5,7 +5,6 @@ using DevExpress.XtraRichEdit.Commands;
 using DevExpress.XtraRichEdit.Commands.Internal;
 using DevExpress.XtraRichEdit.Export;
 using DevExpress.XtraRichEdit.Export.Html;
-using DevExpress.XtraRichEdit.Utils;
 using DevExpress.Office.Commands.Internal;
 using DevExpress.Office.Utils;
 
@@ -54,12 +53,12 @@ namespace RichEditCustomCopyPaste {
         }
 
         protected override RichEditCommand CreateInsertObjectCommand() {
-            return new CustomPasteSelectionCoreCommand(base.Control, new DevExpress.Office.Commands.Internal.ClipboardPasteSource());
+            return new CustomPasteSelectionCoreCommand(base.Control, new ClipboardPasteSource());
         }
     }
 
     public class CustomPasteSelectionCoreCommand : PasteSelectionCoreCommand {
-        public CustomPasteSelectionCoreCommand(IRichEditControl control, DevExpress.Office.Commands.Internal.PasteSource pasteSource)
+        public CustomPasteSelectionCoreCommand(IRichEditControl control, PasteSource pasteSource)
             : base(control, pasteSource) {
 
         }
